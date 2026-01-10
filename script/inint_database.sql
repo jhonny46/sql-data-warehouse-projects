@@ -2,7 +2,7 @@
 =========================================================
 Create Database and Schemas
 =========================================================
-Scruot Purpose:
+Script Purpose:
     This script creates a new database named 'Datawarehouse' after checking if it already exists.
     If the database exists, it is dropped and recreated. Addtionaly, the script setsup three schemas
     within the database: 'bronze', 'Silver' and 'Gold'.
