@@ -102,7 +102,7 @@ DECLARE @start_time DATETIME, @end_time DATETIME, @batch_start_time DATETIME, @b
             CAST(prd_start_dt AS DATE) AS prd_start_dt,
             -- Calculate end date as one day before the next start date/ data enrichment 
             CAST( DATEADD(day, -1, LEAD(prd_start_dt) OVER(PARTITION BY prd_key ORDER BY prd_start_dt) ) AS DATE) AS prd_end_dt_
-            FROM silver.crm_prd_info ;
+            FROM bronze.crm_prd_info ;
         SET @end_time =  GETDATE();
         PRINT ' >> Load Duration: ' + CAST(DATEDIFF(SECOND, @start_time, @end_time) AS NVARCHAR) + 'Seconds';
         PRINT '-----------------------';
